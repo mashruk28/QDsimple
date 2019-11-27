@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackpane_main" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="qdsimple.QDsimple_main_FXMLDocumentController">
+   <children>
+      <BorderPane fx:id="borderpane_main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0">
+         <top>
+            <MenuBar prefHeight="25.0" style="-fx-background-color: #616161 #616161;" BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu mnemonicParsing="false">
+                     <items>
+                        <MenuItem fx:id="newworkspace_file_menubar_borderpane_main" mnemonicParsing="false" onAction="#activated_newworkspace_file_menubar_borderpane_main_f" text="New workspace     ">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="closeworkspace_file_menubar_borderpane_main" disable="true" mnemonicParsing="false" onAction="#activated_newworkspace_file_menubar_borderpane_main_f" text="Close workspace     ">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#activated_exit_file_menubar_borderpane_main_f" text="Exit program     ">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                     </items>
+                     <graphic>
+                        <Label text="File" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Medium" size="13.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Menu>
+                  <Menu mnemonicParsing="false">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#save_structure_file_f" text="Save Structure File" />
+                     </items>
+                     <graphic>
+                        <Label text="Operations" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Medium" size="13.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Menu>
+                  <Menu mnemonicParsing="false">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#activated_about_help_menubar_borderpane_main_f" text="About QDsimple" />
+                     </items>
+                     <graphic>
+                        <Label text="Help" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Medium" size="13.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Menu>
+               </menus>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </MenuBar>
+         </top>
+         <left>
+            <AnchorPane fx:id="anchorpaneleft_borderpane_main" prefHeight="200.0" prefWidth="234.0" style="-fx-background-color: #e4ffe6;" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <Label prefHeight="38.0" prefWidth="220.0" text="Add Device Components" textFill="#22805d" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="Roboto Medium" size="18.0" />
+                     </font>
+                     <effect>
+                        <Glow level="0.6" />
+                     </effect>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="9.0" />
+                     </padding>
+                  </Label>
+                  <JFXTabPane layoutX="37.0" layoutY="40.0" prefHeight="295.0" prefWidth="220.0" AnchorPane.bottomAnchor="360.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                     <tabs>
+                        <Tab>
+                           <graphic>
+                              <Label text="Regions" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="14.0" />
+                                 </font></Label>
+                           </graphic>
+                           <content>
+                              <FlowPane hgap="10.0" prefHeight="200.0" prefWidth="200.0" vgap="10.0">
+                                 <children>
+                                    <JFXButton fx:id="btn_base" buttonType="RAISED" onAction="#activated_create_base_f" prefHeight="60.0" prefWidth="60.0" ripplerFill="#3f9a15" style="-fx-background-image: url('/images/base_cube.png'); -fx-background-position: center; -fx-background-radius: 5; -fx-background-repeat: no-repeat;">
+                                       <FlowPane.margin>
+                                          <Insets left="5.0" right="100.0" top="10.0" />
+                                       </FlowPane.margin>
+                                    </JFXButton>
+                                    <Label fx:id="label_base" text="Create Base" textFill="#1170a4">
+                                       <font>
+                                          <Font name="Roboto Black" size="12.0" />
+                                       </font>
+                                       <FlowPane.margin>
+                                          <Insets left="3.0" />
+                                       </FlowPane.margin>
+                                    </Label>
+                                    <Separator prefHeight="10.0" prefWidth="200.0">
+                                       <FlowPane.margin>
+                                          <Insets />
+                                       </FlowPane.margin>
+                                    </Separator>
+                                    <JFXButton fx:id="btn_stack" buttonType="RAISED" disable="true" onAction="#activated_add_stack_f" prefHeight="60.0" prefWidth="60.0" ripplerFill="#3f9a15" style="-fx-background-image: url('/images/stack_cube.png'); -fx-background-position: center; -fx-background-radius: 5; -fx-background-repeat: no-repeat;">
+                                       <FlowPane.margin>
+                                          <Insets left="5.0" right="100.0" top="10.0" />
+                                       </FlowPane.margin>
+                                    </JFXButton>
+                                    <Label fx:id="label_stack" disable="true" text="Add Layer" textFill="#1170a4">
+                                       <font>
+                                          <Font name="Roboto Black" size="12.0" />
+                                       </font>
+                                       <FlowPane.margin>
+                                          <Insets left="8.0" />
+                                       </FlowPane.margin>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding></FlowPane>
+                           </content>
+                        </Tab>
+                        <Tab>
+                           <graphic>
+                              <Label text="Top Gates" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                           <content>
+                              <FlowPane hgap="10.0" prefHeight="200.0" prefWidth="200.0" vgap="10.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <JFXButton fx:id="btn_topgate_circle" buttonType="RAISED" disable="true" onAction="#activated_topgate_circle" prefHeight="60.0" prefWidth="60.0" ripplerFill="#3f9a15" style="-fx-background-image: url('/images/circ.png'); -fx-background-position: center; -fx-background-radius: 5; -fx-background-repeat: no-repeat;">
+                                       <FlowPane.margin>
+                                          <Insets left="5.0" top="10.0" />
+                                       </FlowPane.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="btn_topgate_rectangle" buttonType="RAISED" disable="true" onAction="#activated_topgate_rectangle" prefHeight="60.0" prefWidth="60.0" ripplerFill="#3f9a15" style="-fx-background-image: url('/images/rect.png'); -fx-background-position: center; -fx-background-radius: 5; -fx-background-repeat: no-repeat;">
+                                       <FlowPane.margin>
+                                          <Insets top="10.0" />
+                                       </FlowPane.margin>
+                                    </JFXButton>
+                                    <JFXButton fx:id="btn_topgate_polygon" buttonType="RAISED" disable="true" onAction="#activated_topgate_polygon" prefHeight="60.0" prefWidth="60.0" ripplerFill="#3f9a15" style="-fx-background-image: url('/images/poly.png'); -fx-background-position: center; -fx-background-radius: 5; -fx-background-repeat: no-repeat;">
+                                       <FlowPane.margin>
+                                          <Insets top="10.0" />
+                                       </FlowPane.margin>
+                                    </JFXButton>
+                                    <Label fx:id="label_topgate_circle" disable="true" text="Circle" textFill="#1170a4">
+                                       <font>
+                                          <Font name="Roboto Black" size="12.0" />
+                                       </font>
+                                       <FlowPane.margin>
+                                          <Insets left="18.0" />
+                                       </FlowPane.margin>
+                                    </Label>
+                                    <Label fx:id="label_topgate_rectangle" disable="true" text="Rectangle" textFill="#1170a4">
+                                       <font>
+                                          <Font name="Roboto Black" size="12.0" />
+                                       </font>
+                                       <FlowPane.margin>
+                                          <Insets left="18.0" />
+                                       </FlowPane.margin>
+                                    </Label>
+                                    <Label fx:id="label_topgate_polygon" disable="true" text="Polygon" textFill="#1170a4">
+                                       <font>
+                                          <Font name="Roboto Black" size="12.0" />
+                                       </font>
+                                       <FlowPane.margin>
+                                          <Insets left="10.0" />
+                                       </FlowPane.margin>
+                                    </Label>
+                                 </children></FlowPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+         </left>
+         <right>
+            <AnchorPane fx:id="anchorpaneright_borderpane_main" prefHeight="200.0" prefWidth="234.0" style="-fx-background-color: #b0bec5;" BorderPane.alignment="CENTER">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <ScrollPane fx:id="scrollpane_anchorpaneright_borderpane_main" layoutY="43.0" prefHeight="617.0" prefWidth="233.0" style="-fx-focus-color: transparent;">
+                     <content>
+                        <VBox fx:id="vbox_scrollpane" fillWidth="false" prefHeight="615.0" prefWidth="231.0" spacing="10.0" style="-fx-background-color: #b0bec5;">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <Label fx:id="label_1" layoutX="13.0" prefHeight="45.0" prefWidth="196.0" style="-fx-border-color: #00897b; -fx-border-width: 0 0 4 0;" text="  Set Region Properties" textFill="#1e7252">
+                     <font>
+                        <Font name="Roboto Medium" size="18.0" />
+                     </font>
+                     <effect>
+                        <Glow level="0.6" />
+                     </effect>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children></AnchorPane>
+         </right>
+         <center>
+            <AnchorPane fx:id="anchorpanecenter_borderpane_main" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox fx:id="vbox_anchorpanecenter_borderpane_main" alignment="TOP_CENTER" spacing="75.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label />
+                        <ImageView fitHeight="300.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/QDsimple.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label text="A minimalist TCAD tool for simulating Quantum Computing Devices" textFill="#858585">
+                           <font>
+                              <Font name="Roboto Black" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="-75.0" />
+                           </VBox.margin>
+                        </Label>
+                        <JFXButton buttonType="RAISED" onAction="#activated_newworkspace_file_menubar_borderpane_main_f" prefHeight="45.0" prefWidth="264.0" ripplerFill="#4e8aba" style="-fx-background-color: #80deea; -fx-background-radius: 10;" text="Create new workspace" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Medium" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="-40.0" />
+                           </VBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                                 <image>
+                                    <Image url="@../images/Plus_48px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <AnchorPane fx:id="anchorpanedown_borderpane_main" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #616161;" BorderPane.alignment="CENTER">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <HBox fx:id="hboxright_anchorpanedown_borderpane_main" alignment="CENTER_LEFT" layoutX="1105.0" prefHeight="35.0" prefWidth="140.0" spacing="10.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Label fx:id="label1_hboxright_anchorpanedown_borderpane_main" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Thin" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="-2.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="label2_hboxright_anchorpanedown_borderpane_main" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Black" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hboxleft_anchorpanedown_borderpane_main" alignment="CENTER_LEFT" disable="true" prefHeight="35.0" prefWidth="164.0" spacing="10.0" visible="false">
+                     <children>
+                        <Label text="Rotate:" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto Medium" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <JFXButton buttonType="RAISED" graphicTextGap="0.0" onAction="#activated_x_rotate" prefHeight="25.0" prefWidth="25.0" ripplerFill="BLACK" style="-fx-background-image: url('/images/x_rotate.png'); -fx-background-position: center; -fx-background-radius: 5;" textFill="WHITE">
+                           <font>
+                              <Font />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" graphicTextGap="0.0" onAction="#activated_y_rotate" prefHeight="25.0" prefWidth="25.0" ripplerFill="BLACK" style="-fx-background-image: url('/images/y_rotate.png'); -fx-background-position: center; -fx-background-radius: 5;" textFill="WHITE">
+                           <font>
+                              <Font />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" graphicTextGap="0.0" onAction="#activated_z_rotate" prefHeight="25.0" prefWidth="25.0" ripplerFill="BLACK" style="-fx-background-image: url('/images/z_rotate.png'); -fx-background-position: center; -fx-background-radius: 5;" textFill="WHITE">
+                           <font>
+                              <Font />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <Label fx:id="label_message" alignment="CENTER" layoutX="613.0" layoutY="8.0" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Medium" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</StackPane>
